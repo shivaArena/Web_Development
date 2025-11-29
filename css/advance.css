@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* mobile screen */
+@media screen and (min-width:576px) {
+    .service{
+        width:100%
+    }
+}
+
+/* Tablet screen */
+@media screen and (min-width:768px) {
+    .service{
+        width:50%
+    }
+}
+
+/* Desktop screen */
+@media screen and (min-width:960px) {
+    .service{
+        width:25%
+    }
+}
+
+
+/* .service {
+    padding: 20px;
+    background-color: #424de6;
+    width:350px;
+    color: #fff;
+    transition: all 0.7s ease;
+    height:50px;
+    overflow: hidden;
+}
+
+.service:hover {
+    background-color: #2ca06a;
+    color:yellow;
+    width:350px;
+    height:200px;
+} */

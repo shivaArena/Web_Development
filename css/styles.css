@@ -1,0 +1,38 @@
+/* 
+css 
+comments
+*/
+
+/* p{color:red} */
+/* #section{color:red} */
+/* .row{color:blue} */
+/* .row h1{color: red;} */
+
+/* *{color:green} */
+/* 
+#header{
+    color: red;
+}
+
+.row{
+    color:green;
+    font-size: 24px;
+}
+
+img{width:200px;}
+
+*{color:gold}
+
+a{color:red}
+
+.row p a{color:black}
+.row a{color:blue} */
+
+.box{
+    background-color: yellow;
+    padding: 16px;
+    width: 350px;
+    border: 5px solid red;
+    border-radius: 20px 10px 0 15px;
+    margin: 16px;
+}

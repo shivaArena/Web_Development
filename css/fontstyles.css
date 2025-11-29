@@ -1,0 +1,58 @@
+html{height: 100%;}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #894520;
+    background-color: yellow;
+    background-color:rgb(96,150,70);
+    background-color:rgba(96,150,70,0.5);
+    background-color:hsl(50,50%,50%);
+    background-color:hsla(207, 81%, 69%, 0.6);
+    background-image:url(../images/bg_img.png);
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* background-size: contain; */
+    background-size: 100%;
+    background-position: right top;
+    background-position: right bottom;
+    background-position: right center;
+    background-position: center;
+    background-position: left center;
+    background-position: left bottom;
+    background-position: 00px 00px;
+    background-image: linear-gradient(45deg, red, yellow, blue, rgb(150,40,90));
+    background-image: radial-gradient(red,yellow,pink);
+    background-attachment: fixed;
+
+}
+
+.row{width: 450px; padding: 15px; border-radius: 15px;
+    box-shadow: 5px 5px 15px 0px #000;
+    /* border: 5px double red; */
+    border-bottom: 5px double red;
+    background-color: transparent;
+    height: 450px;
+
+}
+
+h1{
+    font-family:"Fascinate Inline", system-ui;
+    font-size: 3rem;
+    color:rebeccapurple;
+    color:#894520;
+    color: hsl(90,50%,20%);
+    color:rgb(150,60,70);
+    color:rgba(4, 158, 219, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-decoration: underline;
+    font-weight: 800;
+    text-align: center; 
+    margin-bottom: 1rem;
+    text-shadow: 5px 5px 5px #000;
+}
+
+p{text-align:justify; line-height: 1.5em;}
+
