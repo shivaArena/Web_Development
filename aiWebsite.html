@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <title>Portfolio — Web Designer</title>
+  <style>
+    :root{--bg:#f8fafc;--text:#0f172a;--muted:#475569;--card:#ffffff;--border:#e2e8f0;--primary:#2563eb;--primary-ink:#ffffff;--accent:#8b5cf6;--accent2:#22d3ee;--shadow:0 10px 30px rgba(2,8,23,.08)}
+    [data-theme="dark"]{--bg:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--card:#0f172a;--border:#1f2937;--primary:#60a5fa;--primary-ink:#0b1220;--accent:#a78bfa;--accent2:#67e8f9;--shadow:0 10px 30px rgba(2,8,23,.35)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;background:linear-gradient(to bottom,rgba(255,255,255,.9),rgba(255,255,255,.6));backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
+    [data-theme="dark"] header{background:linear-gradient(to bottom,rgba(15,23,42,.85),rgba(15,23,42,.6))}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand .logo{width:32px;height:32px;border-radius:8px;background:radial-gradient(120px 80px at 20% 20%, var(--accent), transparent),radial-gradient(120px 80px at 80% 80%, var(--accent2), transparent);box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:8px;color:var(--muted)}
+    .nav-links a:hover{color:var(--text);background:var(--card);box-shadow:var(--shadow)}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .btn-primary{background:var(--primary);color:var(--primary-ink);border-color:transparent}
+    .btn-ghost{background:transparent}
+    .menu-toggle{display:none}
+    @media (max-width: 880px){
+      .menu-toggle{display:inline-flex}
+      .nav-links{position:fixed;inset:68px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--border);padding:16px;display:none;flex-direction:column;gap:10px}
+      .nav-links.open{display:flex}
+    }
+
+    .hero{position:relative}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:64px 0}
+    .hero .right{display:flex;flex-direction:column;gap:18px}
+    .hero-visual{height:260px;border-radius:16px;border:1px solid var(--border);background:conic-gradient(from 180deg at 50% 50%, rgba(2,8,23,.06), transparent), radial-gradient(200px 140px at 20% 30%, var(--accent), transparent), radial-gradient(220px 160px at 80% 70%, var(--accent2), transparent);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-visual:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(2,8,23,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(2,8,23,.06) 1px, transparent 1px);background-size:16px 16px;mix-blend-mode:overlay;opacity:.5}
+    @media (max-width: 960px){.hero .wrap{grid-template-columns:1fr;padding:40px 0}}
+    .headline{font-size:clamp(32px,6vw,56px);font-weight:800;letter-spacing:-.02em}
+    .headline .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{font-size:18px;color:var(--muted);margin-top:14px}
+    .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow)}
+    .card.pad{padding:24px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .metric{padding:16px;border-radius:12px;border:1px dashed var(--border);text-align:center}
+    .metric .num{font-size:24px;font-weight:700}
+
+    .section{padding:48px 0}
+    .section .title{font-size:24px;font-weight:700;margin-bottom:18px}
+    .section .muted{color:var(--muted)}
+
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media (max-width: 960px){.skills{grid-template-columns:repeat(2,1fr)}}
+    .skill{padding:18px;border-radius:14px;border:1px solid var(--border);background:var(--card)}
+    .skill .label{display:flex;justify-content:space-between;align-items:center;font-weight:600}
+    .bar{height:8px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:.25;margin-top:10px;position:relative}
+    .bar span{position:absolute;inset:0;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .filters .btn{height:36px}
+    .filters .btn.active{background:var(--primary);color:var(--primary-ink);border-color:transparent}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width: 1024px){.projects{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.projects{grid-template-columns:1fr}}
+    .project{overflow:hidden;border-radius:16px;border:1px solid var(--border);background:var(--card);display:flex;flex-direction:column}
+    .thumb{height:180px;background:
+      radial-gradient(160px 100px at 20% 20%, var(--accent), transparent),
+      radial-gradient(160px 100px at 80% 80%, var(--accent2), transparent),
+      linear-gradient(180deg, rgba(2,8,23,.04), transparent)}
+    .project .info{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:999px;color:var(--muted)}
+    .project:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media (max-width: 960px){.about{grid-template-columns:1fr}}
+    .about .big{font-size:20px;color:var(--muted)}
+
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    @media (max-width: 960px){.contact{grid-template-columns:1fr}}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .input{height:44px;border-radius:10px;border:1px solid var(--border);background:var(--card);padding:0 12px;color:var(--text)}
+    textarea.input{height:140px;padding:12px 12px;resize:vertical}
+    .helper{font-size:12px;color:var(--muted)}
+    .status{margin-top:12px}
+    .status .ok{display:none;color:#16a34a}
+    .status .err{display:none;color:#dc2626}
+    .status.show .ok{display:block}
+    .status.show .err{display:block}
+
+    .subscribe-controls{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:10px}
+    .subscribe-controls .btn{height:44px}
+    @media (max-width: 480px){.subscribe-controls{grid-template-columns:1fr}}
+
+    footer{border-top:1px solid var(--border);padding:28px 0;margin-top:40px}
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted)}
+    .social{display:flex;gap:12px}
+    .social a{padding:8px 10px;border-radius:8px;border:1px solid var(--border)}
+    .social a:hover{color:var(--text);background:var(--card);box-shadow:var(--shadow)}
+
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Web Designer</div>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn" data-action="toggle-theme" aria-pressed="false" aria-label="Toggle theme">Dark Mode</button>
+        <button class="btn menu-toggle" aria-label="Toggle menu" data-action="toggle-menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container wrap">
+        <div>
+          <h1 class="headline reveal">Designing delightful, accessible, high-performance web experiences <span class="grad">that convert</span>.</h1>
+          <p class="sub reveal">I craft modern websites and interfaces focused on clarity, speed, and business outcomes. Explore selected projects and process below.</p>
+          <div class="cta reveal">
+            <a class="btn btn-primary" href="#work">View Work</a>
+            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          </div>
+          <div class="metrics reveal">
+            <div class="metric card"><div class="num">50+ </div><div class="muted">Projects delivered</div></div>
+            <div class="metric card"><div class="num"><span aria-hidden="true">★</span> 4.9</div><div class="muted">Avg client rating</div></div>
+            <div class="metric card"><div class="num"><span aria-hidden="true">⚡</span> 95+</div><div class="muted">Lighthouse scores</div></div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="hero-visual reveal" aria-hidden="true"></div>
+          <div class="card pad reveal">
+            <div class="title">Capabilities</div>
+            <div class="skills">
+              <div class="skill"><div class="label"><span>HTML & Semantic</span><span>Expert</span></div><div class="bar"><span style="width:100%"></span></div></div>
+              <div class="skill"><div class="label"><span>CSS & Animations</span><span>Advanced</span></div><div class="bar"><span style="width:90%"></span></div></div>
+              <div class="skill"><div class="label"><span>JavaScript</span><span>Advanced</span></div><div class="bar"><span style="width:85%"></span></div></div>
+              <div class="skill"><div class="label"><span>Accessibility</span><span>Advanced</span></div><div class="bar"><span style="width:90%"></span></div></div>
+              <div class="skill"><div class="label"><span>Performance</span><span>Advanced</span></div><div class="bar"><span style="width:88%"></span></div></div>
+              <div class="skill"><div class="label"><span>Design Systems</span><span>Advanced</span></div><div class="bar"><span style="width:86%"></span></div></div>
+              <div class="skill"><div class="label"><span>UI/UX</span><span>Advanced</span></div><div class="bar"><span style="width:90%"></span></div></div>
+              <div class="skill"><div class="label"><span>Prototyping</span><span>Advanced</span></div><div class="bar"><span style="width:85%"></span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section">
+      <div class="container">
+        <div class="card pad reveal">
+          <div class="title">Newsletter</div>
+          <p class="muted">Monthly insights on design, UX, and performance. No spam.</p>
+          <form id="newsletter-form" novalidate>
+            <div class="subscribe-controls">
+              <input id="newsletter-email" name="email" type="email" class="input" placeholder="you@example.com" required aria-label="Email">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <div class="status" id="newsletter-status" aria-live="polite"><div class="ok">Subscribed. Check your inbox.</div><div class="err">Enter a valid email to subscribe.</div></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="container">
+        <div class="title">Selected Work</div>
+        <div class="muted" style="margin-bottom:16px">Filter by category</div>
+        <div class="filters">
+          <button class="btn active" data-filter="all">All</button>
+          <button class="btn" data-filter="websites">Websites</button>
+          <button class="btn" data-filter="uiux">UI/UX</button>
+          <button class="btn" data-filter="apps">Apps</button>
+        </div>
+        <div class="projects">
+          <a href="#" class="project reveal" data-category="websites">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">Portfolio Redesign</div>
+              <div class="muted">Website</div>
+              <div class="tags"><span class="tag">Semantic HTML</span><span class="tag">CSS Grid</span><span class="tag">Animations</span></div>
+            </div>
+          </a>
+          <a href="#" class="project reveal" data-category="websites">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">SaaS Landing Page</div>
+              <div class="muted">Website</div>
+              <div class="tags"><span class="tag">Responsive</span><span class="tag">Performance</span><span class="tag">A/B Testing</span></div>
+            </div>
+          </a>
+          <a href="#" class="project reveal" data-category="apps">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">Mobile Banking UI</div>
+              <div class="muted">App</div>
+              <div class="tags"><span class="tag">Design System</span><span class="tag">Prototyping</span><span class="tag">Accessibility</span></div>
+            </div>
+          </a>
+          <a href="#" class="project reveal" data-category="uiux">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">Dashboard UI Kit</div>
+              <div class="muted">UI/UX</div>
+              <div class="tags"><span class="tag">Components</span><span class="tag">Grid</span><span class="tag">Tokens</span></div>
+            </div>
+          </a>
+          <a href="#" class="project reveal" data-category="websites">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">E‑commerce Storefront</div>
+              <div class="muted">Website</div>
+              <div class="tags"><span class="tag">Lighthouse 95+</span><span class="tag">Accessibility</span><span class="tag">SEO</span></div>
+            </div>
+          </a>
+          <a href="#" class="project reveal" data-category="uiux">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="info">
+              <div class="label">Design System Starter</div>
+              <div class="muted">UI/UX</div>
+              <div class="tags"><span class="tag">Tokens</span><span class="tag">Docs</span><span class="tag">Automation</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="card pad reveal">
+          <div class="title">About</div>
+          <p class="big">I help teams ship fast, accessible, and beautiful web experiences by combining design thinking with engineering rigor.</p>
+          <div class="metrics">
+            <div class="metric"><div class="num">10y</div><div class="muted">Experience</div></div>
+            <div class="metric"><div class="num">20+</div><div class="muted">Industries</div></div>
+            <div class="metric"><div class="num">∞</div><div class="muted">Curiosity</div></div>
+          </div>
+        </div>
+        <div class="card pad reveal">
+          <div class="title">Process</div>
+          <ul>
+            <li>Discovery and objectives alignment</li>
+            <li>Information architecture and content strategy</li>
+            <li>Accessible, performant implementation</li>
+            <li>Measurement, iteration, and documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div class="card pad reveal">
+          <div class="title">Let’s talk</div>
+          <form id="contact-form" novalidate>
+            <div class="field"><label for="name">Name</label><input id="name" name="name" class="input" placeholder="Your name" required></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" class="input" placeholder="you@example.com" required></div>
+            <div class="field"><label for="message">Message</label><textarea id="message" name="message" class="input" placeholder="How can I help?" required></textarea></div>
+            <div class="helper">No spam. Your details are kept private.</div>
+            <div class="status" id="status"><div class="ok">Thanks, your message has been noted.</div><div class="err">Please complete all fields with a valid email.</div></div>
+            <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Send</button></div>
+          </form>
+        </div>
+        <div class="card pad reveal">
+          <div class="title">Availability</div>
+          <p class="muted">Currently accepting new projects. Typical kickoff in 2–3 weeks.</p>
+          <div class="metrics">
+            <div class="metric"><div class="num">1–3mo</div><div class="muted">Engagements</div></div>
+            <div class="metric"><div class="num">Remote</div><div class="muted">Worldwide</div></div>
+            <div class="metric"><div class="num">Hybrid</div><div class="muted">Selected cities</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Web Designer</div>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="Dribbble">Dribbble</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const body=document.body
+    const themeBtn=document.querySelector('[data-action="toggle-theme"]')
+    const menuBtn=document.querySelector('[data-action="toggle-menu"]')
+    const navLinks=document.getElementById('nav-links')
+    function applyTheme(t){body.setAttribute('data-theme',t);localStorage.setItem('theme',t);themeBtn.setAttribute('aria-pressed',t==='dark');themeBtn.textContent=t==='dark'?'Light Mode':'Dark Mode'}
+    const savedTheme=localStorage.getItem('theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')
+    applyTheme(savedTheme)
+    themeBtn.addEventListener('click',()=>{applyTheme(body.getAttribute('data-theme')==='dark'?'light':'dark')})
+    menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('open')})
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')))
+
+    const filterButtons=[...document.querySelectorAll('[data-filter]')]
+    const cards=[...document.querySelectorAll('.project')]
+    filterButtons.forEach(btn=>btn.addEventListener('click',()=>{filterButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.getAttribute('data-filter');cards.forEach(c=>{const ok=f==='all'||c.getAttribute('data-category')===f;c.style.display=ok?'flex':'none'})}))
+
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15})
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el))
+
+    const form=document.getElementById('contact-form')
+    const status=document.getElementById('status')
+    form.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();const message=document.getElementById('message').value.trim();const valid=/.+@.+\..+/.test(email)&&name.length>1&&message.length>4;status.classList.remove('show');if(valid){status.querySelector('.ok').style.display='block';status.querySelector('.err').style.display='none';status.classList.add('show');form.reset()}else{status.querySelector('.ok').style.display='none';status.querySelector('.err').style.display='block';status.classList.add('show')}})
+    document.getElementById('year').textContent=new Date().getFullYear()
+    const newsletterForm=document.getElementById('newsletter-form')
+    const newsletterStatus=document.getElementById('newsletter-status')
+    newsletterForm.addEventListener('submit',e=>{e.preventDefault();const email=document.getElementById('newsletter-email').value.trim();const valid=/.+@.+\..+/.test(email);newsletterStatus.classList.remove('show');if(valid){newsletterStatus.querySelector('.ok').style.display='block';newsletterStatus.querySelector('.err').style.display='none';newsletterStatus.classList.add('show');newsletterForm.reset()}else{newsletterStatus.querySelector('.ok').style.display='none';newsletterStatus.querySelector('.err').style.display='block';newsletterStatus.classList.add('show')}})
+  </script>
+</body>
+</html>
