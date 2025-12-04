@@ -1,0 +1,20 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* navbar  style*/
+
+nav ul li a.active{
+ text-decoration: underline;
+}
+nav ul li a{
+ padding: 1rem 2rem;
+ color: var(--secondary-color);
+ font-weight: 500;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
