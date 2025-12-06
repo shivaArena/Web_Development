@@ -18,3 +18,14 @@ h1{
     font-weight: 700;
     color: var(--secondary-color);
 }
+
+
+#services img{
+    width: 65px;   
+}
+
+#services p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
