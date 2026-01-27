@@ -1,0 +1,341 @@
+// single line comment
+/*
+this is a
+ multi 
+ line comment
+*/
+
+// variables
+/*
+var name = "John Doe";
+let age = 30;
+const mobile = "09123456789";
+*/
+// var name = "arena" // i can change the value of name
+// let age = 25; // error
+// age = 25; // no error
+
+// const mobile = "25609899"; // error
+// mobile = "9772005699"; // error
+
+// data primitive type in javascript
+/*
+    1. number
+    2. string
+    3. boolean
+    4. object
+    5. null
+    6. undefined
+*/
+/*
+// 1. number
+let price = 100;
+let height = 3.75;
+
+// 2. string
+let name = "Ravi Kumar";
+let address = "123 Main St";
+
+// 3. boolean
+let isStudent = true;
+let isMale = false;
+
+// 4. object
+let person = {
+    name: "John Doe",
+    age: 30,
+    mobile: "09123456789"
+};
+
+// 5. null
+let car = null;
+
+// 6. undefined
+let age;
+*/
+/*
+console.log(price);
+console.log(height);
+console.log(name);
+console.log(address);
+console.log(isStudent);
+console.log(isMale);
+console.log(person);
+console.log(car);
+console.log(age);
+
+console.log(typeof price);
+console.log(typeof height);
+console.log(typeof name);
+console.log(typeof address);
+console.log(typeof isStudent);
+console.log(typeof isMale);
+console.log(typeof person);
+console.log(typeof car);
+console.log(typeof age);
+*/
+
+// operators in javascript
+/*
+    1. arithmetic operators
+    2. comparison operators
+    3. logical operators
+    4. assignment operators
+*/
+
+// 1. arithmetic operators
+// +, -, *, /, %
+/*
+let a = 10;
+let b = 5;
+let c = a + b; // 15
+let d = a - b; // 5
+let e = a * b; // 50
+let f = a / b; // 2
+let g = a % b; // 0 
+
+let h = a+b*c
+let i = (a+b)*c
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
+console.log(g);
+console.log(h);
+console.log(i);
+*/
+
+// assignment operator
+/*
+let a = 10;
+let b = 5;
+
+a += 5 //15
+console.log(a);
+a -= 2 //13
+console.log(a);
+a *= 3 //39
+console.log(a);
+a /= 4 //9.75
+console.log(a);
+a %= 2 //1.75
+console.log(a);
+
+a += 1
+a ++ 
+
+a -= 1
+a --
+
+
+*/
+// comparison operator
+/*
+< , > , <= , >= , == , != , === , !==
+*/
+
+/*
+let a = 10;
+let b = 5;
+let c = "10" // true
+
+console.log(a > b); // true
+console.log(a < b); // false
+console.log(a >= b); // true
+console.log(a <= b); // false
+console.log(a == b); // false
+console.log(a != b); // true
+console.log(a === c); // false
+console.log(a == c); // true
+console.log(a !== b); // true
+console.log(typeof a, typeof c); 
+*/
+// logical operator
+
+/*
+&& , || , !
+*/
+
+/*
+let a = 10;
+let b = 5;
+let c = 2;
+console.log(a > b && a > c); // true
+console.log(a > b && a < c); // false
+console.log(a > b || a > c); // true
+console.log(a < b || c > b); // false
+console.log(!(a > b)); // false
+*/
+
+// conditional statement
+/*
+    1. if statement
+    2. if-else statement
+    3. nested if-else statement
+
+let a = 10;
+let b = 5;
+let c = 2;
+
+if (a > b) {
+    console.log("a is greater than b");
+} else {
+    console.log("a is not greater than b");
+}
+
+// Add a nested if-else statement to demonstrate more complex conditional logic
+if (a < b) {
+    console.log("a is greater than b");
+} else if (a > c) {
+    console.log("a is greater than b & c");
+} else {
+    console.log("a is not greater than b less then c");
+}
+
+let month = 2;
+switch(month){
+    case 1:
+        console.log("January");
+        break;
+    case 2:
+        console.log("February");
+        break;
+    case 3:
+        console.log("March");
+        break;
+    default:
+        console.log("Invalid month");
+}
+*/
+
+// looping statement
+/*
+    1. for loop
+    2. while loop
+    3. do-while loop
+*/
+
+// 1. for loop
+
+/*
+for(let i=0;i<=5;i++){
+    if(i == 3){
+        continue;
+    }
+    console.log(i);
+}
+
+for(let i=0;i<=5;i++){
+    if(i == 3){
+        break;
+    }
+    console.log(i);
+}
+*/
+
+/*
+let output = 0;
+while (output <= 5) {
+    // console.log(output);
+    document.writeln("Arena Animation " + output + "<br>");
+    output++;
+}
+
+let result = 50;
+do{
+    result += 10;
+    console.log(result);
+}while(result <= 10);
+*/
+
+// functions in javascript
+/*
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(30, 10)); // 15
+
+let subtract = (a, b)=> {
+    return a - b;
+}
+
+console.log(subtract(30, 10)); // 20
+
+let multiply = function(a, b) {
+    return a * b;
+}
+console.log(multiply(30, 10)); // 300
+*/
+
+// built in objects in javascript
+/*
+    1. Math object
+    2. Date object
+    3. String object
+    4. Number object
+    5. Boolean object
+    6. Array object
+    7. Object object
+*/
+
+// let string = "Hello World";
+// let string2 = 'Hello World';
+// let string3 = `Hello World`;
+
+// string prototype methods
+/*
+console.log(string.length); // 11
+console.log(string.toUpperCase()); // HELLO WORLD
+console.log(string.toLowerCase()); // hello world
+console.log(string.charAt(0)); // H
+console.log(string.indexOf("World")); // 6
+console.log(string.replace("World", "Universe")); // Hello Universe
+console.log(string.concat("im learing javascript")); // Hello World! im learing javascript
+document.writeln("<h1>" + string + "</h1>"); // Hello World
+*/
+
+// let randomNumber = Math.random(); // 0.12345678901234567
+// console.log(randomNumber*10); // 1.2345678901234567
+// console.log(Math.round(randomNumber*10)); // 1.2345678901234567
+// console.log(randomNumber*10); // 1.2345678901234567
+// console.log(Math.floor(randomNumber*10)); // 1.2345678901234567
+// console.log(Math.ceil(randomNumber*10)); // 1.2345678901234567
+
+/*
+let today = new Date();
+console.log(today);
+console.log(today.getFullYear()); // 2023
+console.log(today.getMonth()); // 11 (Note: January is 0, December is 11)
+console.log(today.getDate()); // 25
+console.log(today.getDay()); // 3 (Note: Sunday is 0, Saturday is 6)
+console.log(today.getHours()); // 12
+console.log(today.getMinutes()); // 30
+console.log(today.getSeconds()); // 45
+console.log(today.getMilliseconds()); // 123
+*/
+
+// array object & methods
+
+/*
+let marks = [80, 90, 75, 95, 88];
+console.log(marks);
+console.log(marks[0]); // 80
+console.log(marks[1]); // 90
+console.log(marks[2]); // 75
+console.log(marks[3]); // 95
+console.log(marks[4]); // 88
+
+marks.push(92);
+console.log(marks);
+marks.pop();
+console.log(marks);
+marks.shift();
+console.log(marks);
+marks.unshift(85);
+console.log(marks);
+marks.reverse();
+console.log(marks);
+marks.sort();
+console.log(marks);
+*/
