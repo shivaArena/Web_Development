@@ -339,3 +339,85 @@ console.log(marks);
 marks.sort();
 console.log(marks);
 */
+
+// window object
+// console.log(window)
+// window.alert("welcome to javascript");
+// alert("welcome to javascript");
+
+/*
+let result = confirm("Are you sure?");
+console.log(result);
+
+if(result == true){
+    window.location.href = "https://www.facebook.com";
+} else {
+    window.close();
+}
+*/
+// window.prompt("Enter your age");
+/*
+let age = window.prompt("Enter your age");
+console.log(age);
+
+let knowBirthYear = 2026 - parseInt(age);
+console.log(knowBirthYear);
+*/
+/*
+let a = window.prompt("Enter number");
+let ope = window.prompt("Enter operator (+, -, *, /)");
+let b = window.prompt("Enter number");
+
+let result = 0;
+
+switch(ope){
+    case "+":
+        result = parseInt(a) + parseInt(b);
+        console.log(result);
+        break;
+    case "-":
+        result = parseInt(a) - parseInt(b);
+        console.log(result);
+        break;
+    case "*":
+        result = parseInt(a) * parseInt(b);
+        console.log(result);
+        break;
+    case "/":
+        result = parseInt(a) / parseInt(b);
+        console.log(result);
+        break;
+    default:
+        console.log("Invalid operator");
+}
+*/
+
+//    document object
+// console.log(document)
+
+// let homePg = document.getElementById("home");
+// console.log(homePg);
+
+// let allLinks = document.getElementsByTagName("a");
+// console.log(allLinks);
+
+// let classEle = document.getElementsByClassName("box");
+// console.log(classEle);
+
+// css type selector new ways to select element
+/*
+let homeEle = document.querySelector("#home");
+// console.log(homeEle);
+
+let linkEle = document.querySelector("a");
+// console.log(linkEle);
+
+let allEle = document.querySelectorAll("ul li a");
+// console.log(allEle);
+console.log(allEle[2]);
+
+let innerEle = document.querySelector(".box a");
+console.log(innerEle);
+*/
+
+// DOM Manupilation
