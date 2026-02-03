@@ -421,3 +421,81 @@ console.log(innerEle);
 */
 
 // DOM Manupilation
+
+/*
+let hEle = document.querySelector("h1");
+// console.log(hEle)
+
+// innerText innerHTML
+// hEle.innerText = "Arena Animation"
+// hEle.innerText = "<li>Arena Animation</li>"
+// hEle.innerHTML = "<u>Arena Animation</u>"
+
+let emptyEle = document.querySelector("#empty");
+console.log(emptyEle);
+// emptyEle.innerHTML = "<h3>This a empty div</h3>"
+emptyEle.innerHTML = `<div class="box">
+ <p>This is a empty div </p>  
+ <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Gallery</a></li>
+ </ul>
+ </div>`
+ */
+
+ // attribute manipulation
+/*
+ let imgEle = document.querySelector("img");
+ imgEle.setAttribute("height", "400");
+ imgEle.setAttribute("src", "images/BRAND.jpg");
+*/
+
+// let linkEle = document.querySelector("ul li a");
+// linkEle.setAttribute("href", "http://www.facebook.com");
+/*
+let galleryEle = document.querySelector("#facebook");
+console.log(galleryEle);
+galleryEle.removeAttribute("href");
+*/
+/*
+let allNav = document.querySelectorAll("ul li a");
+console.log(allNav);
+allNav[4].innerText="Login";
+*/
+// Styles manipulation
+// let h1Ele = document.querySelector("h1");
+// console.log(h1Ele);
+// h1Ele.style.color = "red";
+// h1Ele.style.backgroundColor = "yellow";
+
+/*
+let allNav = document.querySelectorAll("ul li a");
+for(let i=0; i<allNav.length; i++){
+    allNav[i].style.color = "red";
+}
+*/
+
+// CSS manipulation
+// let h1Ele = document.querySelector("h1");
+// console.log(h1Ele);
+// h1Ele.className = "boxBorder";
+// let BoxEle = document.querySelector(".box");
+// console.log(BoxEle);
+// BoxEle.className = "boxBorder";
+
+// let usdEle = document.querySelector("#usd");
+// console.log(usdEle);
+// usdEle.classList.add("boxBorder");
+// usdEle.classList.remove("box");
+// usdEle.classList.toggle("box");
+
+// create new div element
+/*
+let newDiv = document.createElement("div");
+newDiv.innerHTML = "<h3>New Div</h3>";
+newDiv.className = "boxBorder";
+document.body.appendChild(newDiv);
+*/
+
+// Events
