@@ -13,9 +13,36 @@
 
         .box{
             background-color: #b0e225;
+            width: 350px;
+            padding: 16px;
         }
 
+        .active{
+            border: 2px solid red;
+        }
+
+        .popup{
+            padding: 16px;
+            background-color: rgba(116, 116, 116, 0.712);
+            color: yellow;
+            position: absolute;
+            top:150px;
+            left: 700px;
+        }  
         
+        .chatStyle{
+            position: fixed;
+            right:0;
+            padding: 16px;
+            background-color: rgb(218, 218, 218);
+            height:150px;
+            bottom: -125px;
+            transition: all 0.7s;
+        }
+
+        .chatToggle{
+            bottom: 0;
+        }
     </style>
 </head>
 <body id="home">
@@ -49,7 +76,12 @@
 
     <p>Name : <input type="text" placeholder="Enter your name"></p>
 
-    
+    <div class="chatStyle" id="chatBox">
+        <a href="#" id="chatBtn">Open</a>
+        <h2>Chat with us</h2>
+        <input type="text" name="" id="">
+    </div>
+
 
     <script src="js/script.js"></script>
 </body>

@@ -500,3 +500,73 @@ document.body.appendChild(newDiv);
 
 // Events
 
+// browser events
+/*
+window.onload = ()=>{
+    // console.log("the page is loaded");
+    // alert("the website is load");
+    let elePop = document.createElement("div")
+    elePop.innerHTML = `<h1> Welcome to out website </h1>
+                    <p>this a javascript onload events</p>
+                    <a href="http://facebook.com">Close</a>     
+                    `
+elePop.classList.add("popup");
+document.querySelector("body").appendChild(elePop)
+}
+*/
+// mouse events
+// onclick, dblclick,mouseover
+
+// let bodyEle = document.querySelector("body")
+
+// bodyEle.onclick = ()=>{
+//     alert("you have clicked on body")
+//     changeBg()
+// }
+
+// let imgEle = document.querySelector("img")
+// imgEle.onclick = ()=>{
+//     imgEle.setAttribute("src","images/hero_img.png")
+// }
+
+/*
+let changeBg = ()=>{
+    let divEle = document.querySelector("#gallery")
+    divEle.classList.add("boxBorder")
+}
+
+bodyEle.oncontextmenu = ()=>{
+    alert("right click is disabled");
+    return false;
+}
+
+let popUp = ()=>{
+    let elePop = document.createElement("div")
+    elePop.innerHTML = `<h1> Welcome to out website </h1>
+                        <p>this a javascript onload events</p>
+                        <a href="http://facebook.com">Close</a>  `
+    elePop.classList.add("popup");
+    document.querySelector("body").appendChild(elePop)
+}
+
+bodyEle.ondblclick = popUp
+
+let selectEle = document.querySelector("#usd")
+
+selectEle.onclick = ()=>{
+    selectEle.classList.toggle("active")
+}
+
+let chatBox = document.querySelector("#chatBox")
+let chatBtn = document.querySelector("#chatBtn")
+chatBtn.onclick = ()=>{
+    
+    chatBox.classList.toggle("chatToggle")
+    
+    if(chatBtn.innerHTML == "Close"){
+        chatBtn.innerHTML = "Open"
+    }else{
+        chatBtn.innerHTML = "Close"   
+    }
+}
+    */
