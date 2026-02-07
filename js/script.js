@@ -570,3 +570,43 @@ chatBtn.onclick = ()=>{
     }
 }
     */
+
+/*
+let imgPlaceholder = document.querySelector("#imgPlaceHolder")
+let imgGrid = document.querySelector("#imgGallery")
+imgGrid.addEventListener("click",(e)=>{
+    // console.log(e)
+    // console.log(e.target.tagName == "IMG")
+    if(e.target.tagName == "IMG" ){
+        //  console.log(e.target.attributes.src.nodeValue)
+         let imgPath = e.target.attributes.src.nodeValue
+            imgPlaceholder.setAttribute("src", imgPath)
+    }  
+})
+    */
+
+// Form Events
+
+let nameInput = document.querySelector("#userName")
+let userInputHelp = document.querySelector("#userNameHelp")
+
+nameInput.addEventListener("focus",(e)=>{
+    userInputHelp.innerHTML = "User Name should be 6 letter"
+})
+
+nameInput.addEventListener("blur",(e)=>{
+    if(nameInput.value.length == 0 ){
+        userInputHelp.innerHTML = "Please enter the user name"
+    }
+})
+
+/*
+nameInput.onblur = ()=>{
+    // let inputNumber = nameInput.value.length
+    // console.log(typeof inputNumber)
+    // console.log(inputNumber)
+    if(nameInput.value.length === 0){
+           userInputHelp.innerHTML = "Please enter the user name"
+    }  
+}
+    */
